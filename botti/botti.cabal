@@ -1,0 +1,39 @@
+cabal-version:       2.2
+name:                botti
+version:             0.1.0.0
+author:              Tenho Laakkio
+category:            Web
+build-type:          Simple
+extra-source-files:  README.md
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     HttpRequest,
+                       GameTypes,
+                       Strategy
+
+  default-language:    Haskell2010
+  build-depends:
+         base >= 4.7 && < 5,
+         http-client,
+         http-client-tls,
+         lens,
+         http-types,
+         bytestring,
+         json
+
+executable botti
+  hs-source-dirs:      src
+  main-is:             Main.hs
+  default-language:    Haskell2010
+  build-depends:
+         base >= 4.7 && < 5,
+         botti,
+         http-client,
+         http-client-tls,
+         lens,
+         http-types,
+         bytestring,
+         json,
+         random,
+         containers,
